@@ -1,5 +1,4 @@
 import { Project } from '@/types'
-import { getProjectPages } from './pages'
 
 export const projects: Project[] = [
     {
