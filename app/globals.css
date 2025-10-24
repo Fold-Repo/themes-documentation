@@ -1,26 +1,176 @@
+@import url('https://fonts.cdnfonts.com/css/dm-sans');
+@import url('https://fonts.cdnfonts.com/css/cabinet-grotesk');
+
+
 @import "tailwindcss";
 
+@plugin "tailwindcss-debug-screens";
+@plugin "@tailwindcss/forms";
+@plugin './hero.mts';
+@source '../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
+@custom-variant dark (&:is(.dark *));
+
+/* ================= Light Theme (default) ================= */
 :root {
+
+  /* FONTS */
+  --font-sans: 'DM Sans', sans-serif;
+  --font-grotesk: 'Cabinet Grotesk', sans-serif;
+
+  /* TEXT SIZES */
+  --text-xs: 0.78125rem; /* 12.5px */
+  --text-sm: 0.84375rem; /* 13.5px */
+  --text-base: 0.9375rem; /* 15px */
+  --text-lg: 1.125rem; /* 18px */
+  --text-xl: 1.25rem; /* 20px */
+  --text-2xl: 1.5rem; /* 24px */
+  --text-3xl: 1.875rem; /* 30px */
+  --text-4xl: 2.25rem; /* 36px */
+  --text-5xl: 3rem; /* 48px */
+
+  /* Base surface tokens */
   --background: #ffffff;
   --foreground: #171717;
+}
+
+/* ================= Dark Theme (with .dark class) ================= */
+.dark {
+  --background: #030712;
+  --foreground: #ededed;
+}
+
+/* ================= Tailwind Theme Tokens ================= */
+@theme {
+  /* ================= Surfaces ================= */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* ================= Fonts ================= */
+    --font-sans: var(--font-sans);
+    --font-grotesk: var(--font-grotesk);
+
+  /* ================= Text Sizes ================= */
+  --text-xs: var(--text-xs);
+  --text-sm: var(--text-sm);
+  --text-base: var(--text-base);
+  --text-lg: var(--text-lg);
+  --text-xl: var(--text-xl);
+  --text-2xl: var(--text-2xl);
+  --text-3xl: var(--text-3xl);
+  --text-4xl: var(--text-4xl);
+  --text-5xl: var(--text-5xl);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ================= Base Body ================= */
+body {
+  background: '#F9F9F9';
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--text-base);
+}
+
+/* ================= Container ================= */
+.container {
+  @apply w-full mx-auto px-5 lg:px-14 max-w-screen-sm sm:max-w-3xl md:max-w-5xl lg:max-w-7xl xl:max-w-screen-2xl;
+}
+
+
+/* ================= Components ================= */
+@layer components {
+
+  /* ================= Forms ================= */
+  .form-group {
+    @apply mb-2
+  }
+
+  .form-control {
+    @apply block w-full px-3 py-2.5 md:py-3 text-[13px] border border-[#E6E9EF] bg-[#F4F6F8] text-[#0B1221] rounded-lg outline-none transition-colors duration-300 placeholder:text-gray-500;
+  }
+
+  .form-control:focus {
+    @apply ring-0;
+    border-width: 0.57px;
+  }
+
+  .form-control.is-invalid {
+    @apply border-red-500 ring-2 ring-red-500/15;
+  }
+
+  .form-label {
+    @apply block mb-1 text-sm text-[#8B95A6];
+  }
+
+  select.form-control {
+    @apply appearance-none;
+  }
+
+  textarea.form-control {
+    @apply min-h-[120px] resize-y;
+  }
+
+
+
+  .PhoneInput input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    font-size: 14px !important;
+    background: none !important;
+  }
+
+  .PhoneInput select {
+    font-size: 13px !important;
+    font-weight: 300 !important;
+  }
+
+  .PhoneInput .PhoneInputCountrySelectArrow {
+    @apply !-mr-2 !ml-4
+  }
+
+  .PhoneInput .PhoneInputCountryIconImg {
+    display: block;
+    width: 30px !important;
+    height: 22px !important;
+    max-width: 22px;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    margin-top: -4px;
+  }
+
+  .PhoneInput input[type='tel']:focus {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+
+  .PhoneInput .PhoneInputCountryIcon {
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+
+  /* ================= Inner Shadow Classes ================= */
+  .input-inner-shadow {
+    box-shadow: 0px 5px 5px 0px #0000000D inset,
+                0px 1.75px 1.75px 0px #0000000D inset,
+                0px 1.25px 1.25px 0px #0000000A inset,
+                0px 0.75px 0.75px 0px #0000000D inset,
+                0px 0.5px 0.5px 0px #0000000D inset,
+                0px 0.5px 0.5px 0px #FFFFFF0D,
+                0px 0.75px 0.75px 0px #FFFFFF0A,
+                0px 1.25px 1.25px 0px #FFFFFF08,
+                0px 3px 3px -2px #F4F3F305;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+#react-aria1505729547-_r_5_ {
+  font-size: 11px !important;
 }
