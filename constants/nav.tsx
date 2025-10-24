@@ -22,8 +22,7 @@ export const STACK_NAV_LINKS: NavGroup[] = [
 ]
 
 export const LOGO = {
-  light: '/logo.svg',
-  dark: '/logo-dark.svg',
+  light: '/img/logo.svg',
   alt: 'Logo',
 }
 

@@ -1,37 +1,43 @@
-export const SITE_URL = 'https://ravella.com';
+export const SITE_URL = 'http://localhost:3000/';
 
-export const SEO_TITLE = 'Ravella';
+export const SEO_TITLE = 'E-Commerce Template Showcase';
 
 export const SEO_DESCRIPTION =
-    'Join Ravella - the premier MLM platform for Africans. Build your network, earn rewards, and grow your business with our innovative multi-level marketing system.';
+    'Discover professionally designed e-commerce templates. Modern, responsive templates with React, HTML, and WordPress versions. Ready to customize and deploy in minutes.';
 
 export const APP_KEYWORDS = [
-    'Ravella',
-    'MLM',
-    'multi-level marketing',
-    'network marketing',
-    'business opportunity',
-    'affiliate marketing',
-    'direct selling',
-    'ravella.com',
+    'e-commerce templates',
+    'React templates',
+    'HTML templates',
+    'WordPress themes',
+    'Ruby template',
+    'Fold template',
+    'responsive design',
+    'modern UI',
+    'web development',
+    'template showcase',
+    'e-commerce design',
+    'shopping cart',
+    'product pages',
+    'landing page templates'
 ];
 
-export const APP_AUTHORS = [{ name: 'Ravella' }];
+export const APP_AUTHORS = [{ name: 'Template Showcase' }];
 
 export const APP_OPEN_GRAPH = {
-    title: 'Ravella — Premier MLM Platform',
+    title: 'E-Commerce Template Showcase',
     description:
-        'Ravella is the leading MLM platform empowering Africans to build successful businesses through innovative network marketing opportunities.',
+        'Discover professionally designed e-commerce templates. Modern, responsive templates with React, HTML, and WordPress versions.',
     url: SITE_URL,
-    siteName: 'Ravella',
+    siteName: 'Template Showcase',
     locale: 'en_US',
     type: 'website',
 };
 
 export const APP_TWITTER = {
     card: 'summary_large_image',
-    title: 'Ravella — Premier MLM Platform',
-    description: 'Join the premier MLM platform for Africans. Build your network and grow your business.',
+    title: 'E-Commerce Template Showcase',
+    description: 'Discover professionally designed e-commerce templates. Modern, responsive templates with React, HTML, and WordPress versions.',
 };
 
 export const APP_ROBOTS = { index: true, follow: true };

@@ -44,7 +44,7 @@ const Header: React.FC = () => {
                     <div className="flex items-center justify-between py-3.5 md:py-6">
 
                         <Link href="/" className="flex items-center gap-2">
-                            <Image className='w-13 md:w-14' src={LOGO.light} alt={LOGO.alt} width={79} height={30} />
+                            <Image className='w-10' src={LOGO.light} alt={LOGO.alt} width={50} height={50} />
                         </Link>
 
                         <nav className="hidden md:flex gap-x-8 text-sm">

@@ -7,7 +7,7 @@ import { Header } from "@/components";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    template: "%s | Ravella",
+    template: "%s | Fold",
     default: SEO_TITLE,
   },
   description: SEO_DESCRIPTION,
