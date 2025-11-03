@@ -3,6 +3,7 @@
 import { ScrollAnimation } from '@/lib'
 import { Button } from '@heroui/react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 interface HeroBannerTwoProps {
     title: string
@@ -12,6 +13,7 @@ interface HeroBannerTwoProps {
     primaryColor?: string
     showBuyButton?: boolean
     demoUrl?: string
+    docUrl?: string
 }
 
 const HeroBannerTwo = ({ 
@@ -21,7 +23,8 @@ const HeroBannerTwo = ({
     bannerBg = '#FFF5F5', 
     primaryColor = '#DB4444',
     showBuyButton = true,
-    demoUrl
+    demoUrl,
+    docUrl
 }: HeroBannerTwoProps) => {
     return (
         <div className="flex items-center justify-center py-16 min-h-[80vh]" style={{ backgroundColor: bannerBg }}>
@@ -61,6 +64,18 @@ const HeroBannerTwo = ({
                                     variant="bordered"
                                     style={{ borderColor: primaryColor, color: primaryColor }}>
                                     View Demo
+                                </Button>
+                            )}
+                            
+                            {docUrl && (
+                                <Button 
+                                    as={Link}
+                                    href={docUrl}
+                                    className='h-10 px-8 text-xs mt-1'
+                                    radius='sm'
+                                    variant="bordered"
+                                    style={{ borderColor: primaryColor, color: primaryColor }}>
+                                    View Doc
                                 </Button>
                             )}
                         </div>

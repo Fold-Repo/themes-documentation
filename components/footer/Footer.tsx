@@ -1,8 +1,12 @@
 import React from 'react'
 
-const Footer = () => {
+interface FooterProps {
+    bgColor?: string
+}
+
+const Footer = ({ bgColor = 'bg-[#2D2F5C]' }: FooterProps) => {
     return (
-        <footer className="w-full bg-[#2D2F5C] py-16 min-h-[200px] lg:min-h-[250px] flex items-center justify-center text-center">
+        <footer className={`w-full ${bgColor} py-12 min-h-[200px] lg:min-h-[250px] flex items-center justify-center text-center`}>
             <div className="container mx-auto px-4">
                 <div className="max-w-xl mx-auto">
                     <div className="flex flex-col items-center gap-6 md:gap-7">

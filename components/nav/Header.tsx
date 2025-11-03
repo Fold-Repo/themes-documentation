@@ -41,7 +41,7 @@ const Header: React.FC = () => {
         <>
             <header className="sticky inset-x-0 top-0 z-50 w-full" style={{ backgroundColor: '#0F0C2A' }}>
                 <div className="container mx-auto">
-                    <div className="flex items-center justify-between py-3.5 md:py-6">
+                    <div className="flex items-center justify-between py-3.5 md:py-4">
 
                         <Link href="/" className="flex items-center gap-2">
                             <Image className='w-10' src={LOGO.light} alt={LOGO.alt} width={50} height={50} />
@@ -56,14 +56,16 @@ const Header: React.FC = () => {
                                     <button
                                         key={link.id}
                                         onClick={() => handleSmoothScroll(link.href!)}
-                                        className={`text-white hover:text-white/80 transition-colors ${active ? 'font-semibold' : ''}`}>
+                                        className={`text-white hover:text-white/80 transition-colors cursor-pointer ${active ? 'font-semibold' : ''}`}
+                                        style={active ? { color: '#DB4444' } : {}}>
                                         {link.label}
                                     </button>
                                 ) : (
                                     <Link
                                         key={link.id}
                                         href={link.href || '#'}
-                                        className={`text-white hover:text-white/80 transition-colors ${active ? 'font-semibold' : ''}`}>
+                                        className={`text-white hover:text-white/80 transition-colors ${active ? 'font-semibold' : ''}`}
+                                        style={active ? { color: '#DB4444' } : {}}>
                                         {link.label}
                                     </Link>
                                 )

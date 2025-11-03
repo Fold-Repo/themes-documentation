@@ -79,6 +79,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ open, setOpen }) => {
                                         <button
                                             onClick={() => handleSmoothScroll(link.href!)}
                                             className={`block w-full text-left rounded-lg py-2 transition-colors ${active ? 'font-semibold' : ''}`}
+                                            style={active ? { color: '#DB4444' } : {}}
                                         >
                                             {link.label}
                                         </button>
@@ -88,6 +89,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ open, setOpen }) => {
                                         <Link 
                                             href={link.href || "#"} 
                                             className={`block rounded-lg py-2 transition-colors ${active ? 'font-semibold' : ''}`}
+                                            style={active ? { color: '#DB4444' } : {}}
                                             onClick={onClose}
                                         >
                                             {link.label}
