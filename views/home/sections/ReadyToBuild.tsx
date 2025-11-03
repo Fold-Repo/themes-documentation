@@ -1,8 +1,28 @@
 'use client'
 
 import { Button } from '@heroui/react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const ReadyToBuild = () => {
+    const pathname = usePathname()
+
+    const handleTemplatesClick = () => {
+        if (pathname === '/') {
+            // If already on home page, scroll to templates section
+            const element = document.querySelector('#templates')
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
+                })
+            }
+        } else {
+            // If not on home page, navigate to home and scroll
+            window.location.href = '/#templates'
+        }
+    }
+
     return (
         <div className="pb-12">
 
@@ -21,11 +41,21 @@ const ReadyToBuild = () => {
 
                         <div className="flex flex-wrap items-center justify-center gap-4 pt-10">
 
-                            <Button radius='sm' className="text-xs px-6 py-3 bg-[#6276DC] text-white">
+                            <Button 
+                                radius='sm' 
+                                className="text-xs px-6 py-3 bg-[#6276DC] text-white"
+                                onClick={handleTemplatesClick}
+                            >
                                 Browse all templates
                             </Button>
 
-                            <Button variant='bordered' radius='sm' className="text-xs px-6 py-3 border-[#6276DC] text-[#6276DC]">
+                            <Button 
+                                as={Link}
+                                href="/documentation"
+                                variant='bordered' 
+                                radius='sm' 
+                                className="text-xs px-6 py-3 border-[#6276DC] text-[#6276DC]"
+                            >
                                 View Documentation
                             </Button>
 

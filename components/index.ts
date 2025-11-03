@@ -1,6 +1,7 @@
 import { Header } from "./nav"
 export * from './banner'
 export * from './cards'
+export * from './documentation'
 export * from './footer'
 export * from './gallery'
 

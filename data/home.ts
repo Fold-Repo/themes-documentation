@@ -91,3 +91,10 @@ export const galleryImages = [
     { src: '/img/gallery/5.png', alt: 'Template Preview 1', width: 4000, height: 1043 },
 ]
 
+export const techLogos = [
+    { id: 1, src: '/img/logo/html.svg', alt: 'HTML' },
+    { id: 2, src: '/img/logo/css.png', alt: 'CSS' },
+    { id: 3, src: '/img/logo/react.png', alt: 'React' },
+    { id: 4, src: '/img/logo/wordpress.png', alt: 'WordPress' },
+]
+
