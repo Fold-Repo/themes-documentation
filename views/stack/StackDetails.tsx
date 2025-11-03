@@ -21,6 +21,7 @@ const StackDetails = ({ project, stack }: StackDetailsProps) => {
                     primaryColor={project.theme.primaryColor}
                     showBuyButton={stack.available}
                     demoUrl={stack.demoUrl}
+                    docUrl={`/documentation/${project.title.toLowerCase()}/${stack.name.toLowerCase()}`}
                 />
             </section>
 

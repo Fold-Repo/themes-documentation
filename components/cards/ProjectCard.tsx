@@ -15,10 +15,10 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 
             <div className="bg-gray-300 aspect-9/6 w-full overflow-hidden relative">
                 <div className="transition-transform duration-3000 ease-linear group-hover:-translate-y-[60%]">
-                    <Image 
-                        src={project.image} 
-                        alt={project.title} 
-                        width={600} 
+                    <Image
+                        src={project.image}
+                        alt={project.title}
+                        width={600}
                         height={1200}
                         className="w-full h-auto"
                     />
@@ -39,9 +39,11 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                 </div>
 
                 <div className="border-t border-[#ECECEC] pt-3">
-                    <Link href={`/template/${project.id}`}>
-                        <Button radius='sm' fullWidth className='text-xs bg-[#6276DC] text-white'>Preview</Button>
-                    </Link>
+                    <Button as={Link} href={`/template/${project.id}`} radius='sm' fullWidth
+                        className='text-xs bg-[#6276DC] text-white cursor-pointer'
+                        style={{ backgroundColor: project.theme.primaryColor }}>
+                        Preview
+                    </Button>
                 </div>
 
             </div>
